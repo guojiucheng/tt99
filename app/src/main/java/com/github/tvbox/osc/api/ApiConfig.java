@@ -758,8 +758,8 @@ public class ApiConfig {
     }
 
     String clanToAddress(String lanLink) {
-        if (lanLink.startsWith("clan://localhost/")) {
-            return lanLink.replace("clan://localhost/", ControlManager.get().getAddress(true) + "file/");
+        if (lanLink.startsWith("clan://")) {
+            return lanLink.replace("clan://", ControlManager.get().getAddress(true) + "file/");
         } else {
             String link = lanLink.substring(7);
             int end = link.indexOf('/');
